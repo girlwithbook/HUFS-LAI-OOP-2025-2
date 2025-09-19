@@ -1,23 +1,26 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36429.23 d17.14
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "2nd Assignment by 202504095(Khamidullina Azaliia)", "2nd Assignment by 202504095(Khamidullina Azaliia)\2nd Assignment by 202504095(Khamidullina Azaliia).pyproj", "{B2F427AF-A26C-4AAB-A055-EFBD93F3AB43}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B2F427AF-A26C-4AAB-A055-EFBD93F3AB43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B2F427AF-A26C-4AAB-A055-EFBD93F3AB43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3A74DECD-0C38-41F2-8041-E3490A02AF34}
-	EndGlobalSection
-EndGlobal
+﻿class Accumulator:
+    def __init__(self, start: float = 0.0):
+        self._total = start
+
+    def add(self, x: float) -> float:
+        self._total += x
+        return self._total
+
+    def reset(self) -> None:
+        self._total = 0.0
+
+    @property
+    def total(self) -> float:
+        return self._total
+
+# Примеры (господин профессор, не удаляйте их)
+acc = Accumulator()
+print(acc.add(6))
+print(acc.add(8.5))
+print(acc.total)
+acc.reset()
+print(acc.total)
+
+acc2 = Accumulator(22)
+print(acc2.add(-5))
+print(acc2.total)
